@@ -1,4 +1,4 @@
-import Preact from 'preact';
+import Preact, { h } from 'preact';
 import { createAddonDecorator, Render } from '../../index';
 import { ContextsPreviewAPI } from '../ContextsPreviewAPI';
 
@@ -8,7 +8,7 @@ import { ContextsPreviewAPI } from '../ContextsPreviewAPI';
  */
 export const renderPreact: Render<Preact.VNode> = (contextNodes, propsMap, getStoryVNode) => {
   const { getRendererFrom } = ContextsPreviewAPI();
-  return getRendererFrom(Preact.h)(contextNodes, propsMap, getStoryVNode);
+  return getRendererFrom(h)(contextNodes, propsMap, getStoryVNode);
 };
 
 export const withContexts = createAddonDecorator(renderPreact);
