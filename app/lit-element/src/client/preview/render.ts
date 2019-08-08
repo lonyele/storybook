@@ -14,7 +14,7 @@ export default function renderMain({
   forceRender,
 }: RenderMainArgs) {
   const element = storyFn();
-
+  console.log('@@@@  whatthe element: ', element);
   if (!element) {
     showError({
       title: `Expecting a LitElement component from the story: "${selectedStory}" of "${selectedKind}".`,
@@ -30,6 +30,7 @@ export default function renderMain({
   if (typeof element === 'string') {
     rootElement.innerHTML = element;
   } else if (element instanceof TemplateResult) {
+    console.log('@@@@ 여기 첫버쨰 TemplateResult');
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
     // But forceRender means that it's the same story, so we want too keep the state in that case.
@@ -40,6 +41,7 @@ export default function renderMain({
 
     LitElement.render(element, renderTo, { scopeName: '' });
   } else {
+    console.log('@@@@ 여기 마지막 else');
     rootElement.innerHTML = '';
     rootElement.appendChild(element);
   }
