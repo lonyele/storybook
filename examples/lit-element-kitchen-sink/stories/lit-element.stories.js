@@ -12,11 +12,11 @@ export const testOne = () =>
     <h1>Hello World ???</h1>
   `;
 export const testTwo = () =>
-  html`
-    <my-element foo="holly crap???? yooo no???"></my-element>
+  `
+    <my-element foo="holly"></my-element>
   `;
 export const testThree = () =>
-  html`
-    <custom-button foo="holly crap???? what the?"></custom-button>
+  `
+    <custom-button foo="holly"></custom-button>
   `;
 export const testFour = () => `<simple-greeting></simple-greeting>`;

@@ -28,9 +28,10 @@ export default function renderMain({
 
   showMain();
   if (typeof element === 'string') {
+    console.log('@@@@ 첫번쨰 string');
     rootElement.innerHTML = element;
   } else if (element instanceof TemplateResult) {
-    console.log('@@@@ 여기 첫버쨰 TemplateResult');
+    console.log('@@@@ 두번째 TemplateResult');
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
     // But forceRender means that it's the same story, so we want too keep the state in that case.

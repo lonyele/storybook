@@ -9,4 +9,4 @@ export class CustomButton extends LitElement {
   }
 }
 
-// customElements.define('custom-button', CustomButton);
+customElements.define('custom-button', CustomButton);
